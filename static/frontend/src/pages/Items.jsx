@@ -1,6 +1,6 @@
 import { useGetItemsQuery } from "../api/itemsApi";
-// import { useDispatch } from "react-redux";
-// import { addToCart } from "../features/cartSlice";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../features/cartSlice";
 import {
   Card,
   CardContent,
@@ -13,7 +13,7 @@ import {
 
 const Items = () => {
   const { data: items = [], isLoading } = useGetItemsQuery();
-  //   const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   if (isLoading) return <p>Loading...</p>;
 
@@ -34,7 +34,7 @@ const Items = () => {
                 <Typography variant="h6">{item.name}</Typography>
                 <Typography variant="body2">${item.price}</Typography>
                 <Button
-                  //   onClick={() => dispatch(addToCart(item))}
+                  onClick={() => dispatch(addToCart(item))}
                   variant="contained"
                 >
                   Add to Cart

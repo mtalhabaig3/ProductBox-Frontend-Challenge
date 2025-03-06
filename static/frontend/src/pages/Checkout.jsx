@@ -1,7 +1,10 @@
+import { useSelector, useDispatch } from "react-redux";
+import { removeFromCart } from "../features/cartSlice";
 import { Container, List, ListItem, Button, Typography } from "@mui/material";
 
 const Checkout = () => {
-  const cartItems = [];
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const dispatch = useDispatch();
 
   return (
     <Container>
@@ -12,7 +15,9 @@ const Checkout = () => {
             <Typography>
               {item.name} - ${item.price}
             </Typography>
-            <Button>Remove</Button>
+            <Button onClick={() => dispatch(removeFromCart(item.id))}>
+              Remove
+            </Button>
           </ListItem>
         ))}
       </List>
