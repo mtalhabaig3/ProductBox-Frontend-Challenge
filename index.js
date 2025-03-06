@@ -1,5 +1,6 @@
 var debug = require("debug")("frontend-code-challenge");
 var express = require("express");
+const cors = require("cors");
 var path = require("path");
 var favicon = require("serve-favicon");
 var cookieParser = require("cookie-parser");
@@ -12,10 +13,13 @@ var app = express();
 var log = logger(app);
 
 app.use(bodyParser.json());
+app.use(cors());
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "static/frontend/dist")));
 app.use("/items", items);
+app.use("/img", express.static(path.join(__dirname, "static/img")));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "static/frontend/dist", "index.html"));
 });
