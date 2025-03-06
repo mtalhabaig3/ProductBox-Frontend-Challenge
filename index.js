@@ -14,10 +14,9 @@ var log = logger(app);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "static/frontend/build")));
-
+app.use(express.static(path.join(__dirname, "static/frontend/dist")));
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "static/frontend/build", "index.html"));
+  res.sendFile(path.join(__dirname, "static/frontend/dist", "index.html"));
 });
 app.use("/items", items);
 
