@@ -6,6 +6,7 @@ export const itemsApi = createApi({
   endpoints: (builder) => ({
     getItems: builder.query({
       query: () => "/items",
+      providesTags: ["Items"],
     }),
     addItem: builder.mutation({
       query: (newItem) => ({
@@ -13,6 +14,7 @@ export const itemsApi = createApi({
         method: "POST",
         body: newItem,
       }),
+      invalidatesTags: ["Items"],
     }),
   }),
 });
