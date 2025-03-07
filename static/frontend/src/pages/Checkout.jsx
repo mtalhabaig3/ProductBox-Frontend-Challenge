@@ -56,6 +56,7 @@ const Checkout = () => {
               <Card
                 sx={{
                   display: "flex",
+                  flexDirection: { xs: "column", sm: "row" }, // Column on small, row on larger screens
                   alignItems: "center",
                   boxShadow: 3,
                   borderRadius: 2,
@@ -66,7 +67,7 @@ const Checkout = () => {
                 <CardMedia
                   component="img"
                   sx={{
-                    width: 120,
+                    width: { xs: "100%", sm: 120 }, // Full width on small screens, fixed width on larger screens
                     height: 120,
                     objectFit: "cover",
                     borderRadius: 1,
@@ -82,7 +83,13 @@ const Checkout = () => {
                 />
 
                 {/* Item Details */}
-                <CardContent sx={{ flex: 1, ml: 2 }}>
+                <CardContent
+                  sx={{
+                    flex: 1,
+                    ml: { xs: 0, sm: 2 },
+                    textAlign: { xs: "center", sm: "left" },
+                  }}
+                >
                   <Typography variant="h6" fontWeight="bold">
                     {item.name}
                   </Typography>
@@ -96,7 +103,12 @@ const Checkout = () => {
                 </CardContent>
 
                 {/* Quantity Controls */}
-                <Box display="flex" alignItems="center" gap={1} sx={{ mr: 2 }}>
+                <Box
+                  display="flex"
+                  alignItems="center"
+                  gap={1}
+                  mr={{ xs: 0, sm: 2 }}
+                >
                   <Button
                     variant="outlined"
                     color="primary"
@@ -124,7 +136,11 @@ const Checkout = () => {
                   onClick={() => handleRemove(item.id, item.name)}
                   variant="contained"
                   color="error"
-                  sx={{ fontWeight: "bold", px: 2 }}
+                  sx={{
+                    fontWeight: "bold",
+                    px: 2,
+                    mt: { xs: 2, sm: 0 },
+                  }}
                 >
                   Remove
                 </Button>
