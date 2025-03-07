@@ -5,7 +5,13 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-  const cartItems = useSelector((state) => state.cart.items);
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  console.log("cartItems", cartItems);
+  const totalItems = cartItems?.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
   const navigate = useNavigate();
 
   return (
@@ -20,7 +26,7 @@ const Navbar = () => {
         </Typography>
 
         <IconButton color="inherit" onClick={() => navigate("/checkout")}>
-          <Badge badgeContent={cartItems?.length} color="error" showZero>
+          <Badge badgeContent={totalItems} color="error">
             <ShoppingCartIcon />
           </Badge>
         </IconButton>

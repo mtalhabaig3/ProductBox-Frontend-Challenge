@@ -13,7 +13,7 @@ const Checkout = () => {
         {cartItems.map((item) => (
           <ListItem key={item.id}>
             <Typography>
-              {item.name} - ${item.price}
+              x{item.quantity} {item.name} - ${item.price}
             </Typography>
             <Button onClick={() => dispatch(removeFromCart(item.id))}>
               Remove
