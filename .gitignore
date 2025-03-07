@@ -17,7 +17,7 @@ yarn-error.log*
 .env.production.local
 
 # Compiled files
-dist/
+
 build/
 .cache/
 
