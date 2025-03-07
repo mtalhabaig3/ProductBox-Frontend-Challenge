@@ -15,7 +15,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <AppBar position="static" color="primary">
+    <AppBar position="static" color="info">
       <Toolbar>
         <Typography
           variant="h6"
