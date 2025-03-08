@@ -1,5 +1,5 @@
 import { Card, CardContent, Typography } from "@mui/material";
-import ItemForm from "./ItemForm";
+import ItemForm from "../forms/ItemForm";
 
 const AddItemCard = ({ onSubmit, isLoading }) => (
   <Card sx={{ boxShadow: 3, borderRadius: 2 }}>

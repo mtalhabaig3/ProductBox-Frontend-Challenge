@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../features/cartSlice";
+import { addToCart } from "../../features/cartSlice";
 
 const ItemCard = ({ item }) => {
   const dispatch = useDispatch();

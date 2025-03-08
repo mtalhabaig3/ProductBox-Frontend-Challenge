@@ -4,7 +4,7 @@ import Items from "./pages/Items";
 import AddItem from "./pages/AddItem";
 import { Provider } from "react-redux";
 import { store } from "./store/store"; // Import your Redux store
-import Navbar from "./components/NavBar";
+import Navbar from "./components/ui/NavBar";
 import Checkout from "./pages/Checkout";
 
 function App() {

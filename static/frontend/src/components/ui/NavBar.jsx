@@ -18,8 +18,8 @@ const Navbar = () => {
     <AppBar position="static" color="info">
       <Toolbar>
         <Typography
-          variant="h6"
-          sx={{ flexGrow: 1, cursor: "pointer" }}
+          variant="h5"
+          sx={{ flexGrow: 1, cursor: "pointer", fontFamily: "cursive" }}
           onClick={() => navigate("/")}
         >
           RandoStore

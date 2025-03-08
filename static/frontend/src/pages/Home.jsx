@@ -1,5 +1,6 @@
 import { Container, Button, Box, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import CustomButton from "../components/ui/CustomButton";
 
 const Home = () => {
   return (
@@ -22,25 +23,11 @@ const Home = () => {
       </Typography>
 
       <Box display="flex" gap={2} mt={2}>
-        <Button
-          component={Link}
-          to="/all-items"
-          variant="contained"
-          color="primary"
-          sx={{ px: 4, py: 1 }}
-        >
-          View Items
-        </Button>
+        <CustomButton to="/all-items">View Items</CustomButton>
 
-        <Button
-          component={Link}
-          to="/add-item"
-          variant="outlined"
-          color="primary"
-          sx={{ px: 4, py: 1 }}
-        >
+        <CustomButton to="/add-item" variant="outlined">
           Add Item
-        </Button>
+        </CustomButton>
       </Box>
     </Container>
   );

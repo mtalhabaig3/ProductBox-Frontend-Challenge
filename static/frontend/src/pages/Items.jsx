@@ -2,8 +2,8 @@ import { useGetItemsQuery } from "../api/itemsApi";
 import { Container, CircularProgress } from "@mui/material";
 import toast from "react-hot-toast";
 import { useState } from "react";
-import ItemFilters from "../components/ItemFilters";
-import ItemList from "../components/ItemList";
+import ItemFilters from "../components/items/ItemFilters";
+import ItemList from "../components/items/ItemList";
 
 const Items = () => {
   const { data: items = [], isLoading, isError } = useGetItemsQuery();

@@ -1,5 +1,5 @@
 import { Container } from "@mui/material";
-import AddItemCard from "../components/AddItemCard";
+import AddItemCard from "../components/items/AddItemCard";
 import { useAddItemMutation } from "../api/itemsApi";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
