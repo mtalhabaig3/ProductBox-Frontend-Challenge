@@ -15,4 +15,6 @@ Once the dependancies are installed, you can start the application server by run
 
 Once the server is running, you can access the home page of the application by opening your browser to `http://localhost:3000`
 
+I have already built and served the vite react app at port `3000`
+
 
